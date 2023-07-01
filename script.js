@@ -69,6 +69,7 @@ const facilitator = (() => {
       whichTurn(div);
       addMark(div, divId);
       let gameOver = isFinished();
+      let tie = isTie();
       if (gameOver === true) {
         let victor = gameWinner(div);
         setTimeout(function () {
@@ -76,6 +77,12 @@ const facilitator = (() => {
         }, 200);
         player1Winner.textContent = `${victor} won the game!!!`;
         player2Winner.textContent = `${victor} won the game!!!`;
+      } else if (tie === true) {
+        setTimeout(function () {
+          alertTie();
+        }, 200);
+        player1Winner.textContent = "It's a tie!!!";
+        player2Winner.textContent = "It's a tie!!!";
       }
     });
   });
@@ -159,6 +166,18 @@ const facilitator = (() => {
     console.log(boardArray);
     return gameWon;
   }
+  function isTie() {
+    let tied = false;
+    if (isFinished() === false) {
+      for (let j = 0; j < boardArray.length; j++) {
+        if (boardArray[j] === undefined) {
+          return tied;
+        }
+      }
+      tied = true;
+    }
+    return tied;
+  }
   function gameWinner(div) {
     let winner = "";
     if (
@@ -178,5 +197,8 @@ const facilitator = (() => {
     alert(
       `Congratulations! ${winner} has won! Please click the restart button to start another game.`
     );
+  }
+  function alertTie() {
+    alert("It's a tie! Click the restart button to play again.");
   }
 })();
