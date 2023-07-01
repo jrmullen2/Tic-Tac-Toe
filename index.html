@@ -7,18 +7,36 @@
     <title>Tic Tac Toe</title>
   </head>
   <body>
-    <div>
-      <div class="board left"></div>
-      <div class="board left"></div>
-      <div class="board left"></div>
-      <div class="board topMiddle"></div>
-      <div class="board middle"></div>
-      <div class="board bottomMiddle"></div>
-      <div class="board right"></div>
-      <div class="board right"></div>
-      <div class="board right"></div>
+    <div id="leftSide">
+      <div id="player1Display">
+        <div id="player1Name">P1:</div>
+        <div class="playerMark">Player Mark: O</div>
+        <div id="player1Winner"></div>
+      </div>
+      <button type="button" id="start">Click here to start</button>
     </div>
-    <button type="button" id="start">Click here to start</button>
+
+    <div id="content">
+      <div id="gameBoard">
+        <div id="0" class="board"></div>
+        <div id="1" class="board"></div>
+        <div id="2" class="board"></div>
+        <div id="3" class="board"></div>
+        <div id="4" class="board"></div>
+        <div id="5" class="board"></div>
+        <div id="6" class="board"></div>
+        <div id="7" class="board"></div>
+        <div id="8" class="board"></div>
+      </div>
+    </div>
+    <div id="rightSide">
+      <div id="player2Display">
+        <div id="player2Name">P2:</div>
+        <div class="playerMark">Player Mark: X</div>
+        <div id="player2Winner"></div>
+      </div>
+      <button type="button" id="restart">Restart</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
